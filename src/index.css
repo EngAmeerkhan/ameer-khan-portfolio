@@ -1,0 +1,138 @@
+/* ============================================================
+   index.css — Global styles, Tailwind directives, custom utilities
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Base resets ---------- */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    @apply bg-bg text-text-primary font-body antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(16, 217, 160, 0.3);
+    color: #f1f5f9;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #09090f;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(16, 217, 160, 0.4);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(16, 217, 160, 0.7);
+  }
+}
+
+/* ---------- Component classes ---------- */
+@layer components {
+  /* Glass card */
+  .glass-card {
+    @apply bg-card-glass backdrop-blur-sm border border-white/[0.07] rounded-2xl;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.06) 0%,
+      rgba(255, 255, 255, 0.02) 100%
+    );
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .glass-card:hover {
+    @apply border-accent-emerald/30;
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.4),
+      0 0 20px rgba(16, 217, 160, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    transform: translateY(-4px);
+  }
+
+  /* Accent gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, #10d9a0 0%, #00d4ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Primary CTA button */
+  .btn-primary {
+    @apply relative inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-bg text-sm overflow-hidden transition-all duration-300;
+    background: linear-gradient(135deg, #10d9a0 0%, #00d4ff 100%);
+  }
+  .btn-primary::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: linear-gradient(135deg, #00d4ff 0%, #10d9a0 100%);
+  }
+  .btn-primary:hover::before {
+    @apply opacity-100;
+  }
+  .btn-primary:hover {
+    @apply scale-105;
+    box-shadow: 0 0 25px rgba(16, 217, 160, 0.5);
+  }
+  .btn-primary span {
+    @apply relative z-10;
+  }
+
+  /* Secondary outline button */
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm border transition-all duration-300;
+    border-color: rgba(16, 217, 160, 0.4);
+    color: #10d9a0;
+  }
+  .btn-secondary:hover {
+    border-color: #10d9a0;
+    background: rgba(16, 217, 160, 0.08);
+    box-shadow: 0 0 20px rgba(16, 217, 160, 0.2);
+    @apply scale-105;
+  }
+
+  /* Section heading */
+  .section-label {
+    @apply text-xs font-semibold tracking-[0.2em] uppercase;
+    color: #10d9a0;
+  }
+
+  /* Pill badge */
+  .tag-pill {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+}
+
+/* ---------- Utility overrides ---------- */
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* Reduce motion accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
