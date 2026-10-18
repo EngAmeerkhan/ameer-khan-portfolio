@@ -4,7 +4,7 @@
 // ============================================================
 import { useState } from "react";
 import { motion } from "framer-motion";
-import SectionWrapper, { StaggerContainer, StaggerItem } from "./ui/SectionWrapper";
+import SectionWrapper from "./ui/SectionWrapper";
 import {
   HiMail, HiLocationMarker, HiPaperAirplane, HiCheckCircle,
 } from "react-icons/hi";

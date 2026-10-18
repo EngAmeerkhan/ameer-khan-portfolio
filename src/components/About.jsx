@@ -2,7 +2,7 @@
 // About.jsx
 // Bio, animated counter stats, and optional second photo
 // ============================================================
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import SectionWrapper, { StaggerContainer, StaggerItem } from "./ui/SectionWrapper";
@@ -28,7 +28,7 @@ function useCounter(target, duration = 2000, trigger = false) {
 }
 
 // ---- Single stat card ----
-function StatCard({ icon: Icon, label, value, suffix = "", color, trigger }) {
+function StatCard({ icon: Icon, label, value, suffix = "", _color, trigger }) {
   const count = useCounter(value, 1800, trigger);
   return (
     <motion.div

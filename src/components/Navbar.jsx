@@ -11,11 +11,12 @@ const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
+  { label: "Video Editing", href: "#video-editing" },
   { label: "Certifications", href: "#certifications" },
   { label: "Contact", href: "#contact" },
 ];
 
-export default function Navbar() {
+export default function Navbar({ onOpenEditingStudio }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -82,22 +83,26 @@ export default function Navbar() {
           </a>
 
           {/* Desktop links */}
-          <ul className="hidden md:flex items-center gap-1" role="list">
+          <ul className="hidden lg:flex items-center gap-1" role="list">
             {NAV_LINKS.map(({ label, href }) => {
               const sectionId = href.replace("#", "");
               const isActive = activeSection === sectionId;
+              const isVideoLink = sectionId === "video-editing";
               return (
                 <li key={href}>
                   <a
                     href={href}
                     onClick={(e) => handleNavClick(e, href)}
-                    className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
+                    className={`relative px-3.5 py-2 rounded-lg text-sm font-medium transition-colors duration-200 flex items-center gap-1.5 ${
                       isActive
                         ? "text-accent-emerald"
+                        : isVideoLink
+                        ? "text-purple-300 hover:text-white"
                         : "text-text-muted hover:text-text-primary"
                     }`}
                     aria-current={isActive ? "page" : undefined}
                   >
+                    {isVideoLink && <span>🎬</span>}
                     {label}
                     {isActive && (
                       <motion.span
@@ -116,14 +121,31 @@ export default function Navbar() {
             })}
           </ul>
 
-          {/* Desktop CTA */}
-          <a
-            href="#contact"
-            onClick={(e) => handleNavClick(e, "#contact")}
-            className="hidden md:inline-flex btn-primary text-sm px-5 py-2"
-          >
-            <span>Hire Me</span>
-          </a>
+          {/* Right Action buttons */}
+          <div className="hidden md:flex items-center gap-3">
+            {/* Direct Editing Studio Switcher Button */}
+            <button
+              onClick={onOpenEditingStudio}
+              className="px-3.5 py-2 rounded-xl text-xs font-bold text-white transition-all duration-300 flex items-center gap-1.5 shadow-md hover:scale-105"
+              style={{
+                background: "linear-gradient(135deg, rgba(236,72,153,0.2) 0%, rgba(139,92,246,0.25) 100%)",
+                border: "1px solid rgba(168,85,247,0.4)",
+              }}
+              title="Open full dedicated Video Editing Portfolio"
+            >
+              <span>🎬 Editing Studio</span>
+              <span className="w-2 h-2 rounded-full bg-accent-cyan animate-pulse" />
+            </button>
+
+            {/* Desktop Hire Me CTA */}
+            <a
+              href="#contact"
+              onClick={(e) => handleNavClick(e, "#contact")}
+              className="inline-flex btn-primary text-sm px-5 py-2"
+            >
+              <span>Hire Me</span>
+            </a>
+          </div>
 
           {/* Mobile hamburger */}
           <button
@@ -151,6 +173,26 @@ export default function Navbar() {
               className="md:hidden overflow-hidden bg-bg-secondary/95 backdrop-blur-md border-b border-white/[0.06]"
             >
               <ul className="px-6 py-4 flex flex-col gap-2" role="list">
+                {/* Editing studio highlight in mobile */}
+                <li>
+                  <button
+                    onClick={() => {
+                      setMenuOpen(false);
+                      onOpenEditingStudio?.();
+                    }}
+                    className="w-full text-left px-4 py-2.5 rounded-xl text-sm font-bold text-white flex items-center justify-between"
+                    style={{
+                      background: "linear-gradient(135deg, rgba(236,72,153,0.2) 0%, rgba(139,92,246,0.25) 100%)",
+                      border: "1px solid rgba(168,85,247,0.4)",
+                    }}
+                  >
+                    <span>🎬 Open Video Editing Website</span>
+                    <span className="text-xs bg-purple-500/30 px-2 py-0.5 rounded-full text-purple-200">
+                      Explore →
+                    </span>
+                  </button>
+                </li>
+
                 {NAV_LINKS.map(({ label, href }) => {
                   const sectionId = href.replace("#", "");
                   const isActive = activeSection === sectionId;

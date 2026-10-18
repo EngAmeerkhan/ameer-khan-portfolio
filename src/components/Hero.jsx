@@ -5,10 +5,10 @@
 // ============================================================
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import { HiDownload, HiArrowRight, HiChevronDown } from "react-icons/hi";
+import { HiDownload, HiArrowRight, HiChevronDown, HiFilm } from "react-icons/hi";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
-export default function Hero() {
+export default function Hero({ onOpenEditingStudio }) {
   return (
     <section
       id="hero"
@@ -85,7 +85,7 @@ export default function Hero() {
 
           {/* CTA buttons */}
           <motion.div
-            className="flex flex-wrap gap-4 mb-12"
+            className="flex flex-wrap items-center gap-3.5 mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
@@ -103,7 +103,26 @@ export default function Hero() {
                 View Projects <HiArrowRight className="w-4 h-4" />
               </span>
             </a>
-            {/* TODO: Replace '#' with path to your actual CV PDF */}
+
+            {/* Direct Video Editing Portfolio Button */}
+            <button
+              onClick={onOpenEditingStudio}
+              className="relative inline-flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm transition-all duration-300 shadow-md hover:scale-105 group"
+              style={{
+                background:
+                  "linear-gradient(135deg, rgba(236,72,153,0.18) 0%, rgba(139,92,246,0.22) 50%, rgba(0,212,255,0.18) 100%)",
+                border: "1px solid rgba(168,85,247,0.5)",
+                color: "#f8fafc",
+                boxShadow: "0 0 20px rgba(168,85,247,0.2)",
+              }}
+              aria-label="Open Video Editing Portfolio"
+            >
+              <HiFilm className="w-4 h-4 text-pink-400 group-hover:scale-110 transition-transform" />
+              <span>Editing Portfolio</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan animate-pulse" />
+            </button>
+
+            {/* Resume / CV */}
             <a
               href="#"
               download
@@ -185,7 +204,7 @@ export default function Hero() {
             >
               <img
                 src="/profile.png"
-                alt="Ameer Khan — Computer Engineer"
+                alt="Ameer Khan — Computer Engineer & Video Editor"
                 className="w-full h-full object-contain object-top"
                 style={{
                   mixBlendMode: "screen",
@@ -221,6 +240,18 @@ export default function Hero() {
             >
               <span className="gradient-text">20+</span>
               <span className="text-text-muted ml-1">Technologies</span>
+            </motion.div>
+
+            {/* 4th Floating Chip: Video Editing */}
+            <motion.div
+              className="absolute -left-6 bottom-16 glass-card px-3 py-2 text-xs font-semibold cursor-pointer border border-purple-500/30"
+              animate={{ y: [0, 5, 0] }}
+              transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+              onClick={onOpenEditingStudio}
+              title="Click to view Video Editing Portfolio"
+            >
+              <span className="text-pink-400 font-bold">🎬 5M+</span>
+              <span className="text-text-muted ml-1">Video Views</span>
             </motion.div>
           </div>
         </motion.div>
