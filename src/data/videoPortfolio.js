@@ -60,9 +60,9 @@ export const longFormVideos = [
 export const youtubeAutomationChannels = [
   {
     id: "channel-1",
-    name: "AI Tech Nexus",
+    name: "StoryHive Studios AI",
     avatar: "/editing/channel-ai-1.jpg",
-    channelUrl: "https://www.youtube.com/@AITechNexus", // Paste your YouTube Channel link here
+    channelUrl: "https://www.youtube.com/@StoryHiveStudiosAI", // Paste your YouTube Channel link here
     // Shorts inside this channel (YouTube links):
     shorts: [
       {
@@ -92,9 +92,9 @@ export const youtubeAutomationChannels = [
   },
   {
     id: "channel-2",
-    name: "Cosmic AI Matrix",
+    name: "Restoration Ventures",
     avatar: "/editing/channel-ai-2.jpg",
-    channelUrl: "https://www.youtube.com/@CosmicAIMatrix", // Paste your YouTube Channel link here
+    channelUrl: "https://www.youtube.com/@RestorationVentures", // Paste your YouTube Channel link here
     // Shorts inside this channel (YouTube links):
     shorts: [
       {
@@ -117,4 +117,37 @@ export const youtubeAutomationChannels = [
       },
     ],
   },
+  {
+    id: "channel-3",
+    name: "Pawssh Sspa",
+    avatar: "/editing/channel-ai-3.jpg",
+    channelUrl: "https://www.youtube.com/@PawsshSspa", // Paste your YouTube Channel link here
+    // Shorts inside this channel (YouTube links):
+    shorts: [
+      {
+        id: "ch3-short-1",
+        thumbnail: "/editing/shorts-talkinghead.jpg",
+        youtubeUrl: "https://www.youtube.com/shorts/dQw4w9WgXcQ", // Paste YouTube short link here
+      },
+      {
+        id: "ch3-short-2",
+        thumbnail: "/editing/shorts-techbreakdown.jpg",
+        youtubeUrl: "https://www.youtube.com/shorts/dQw4w9WgXcQ", // Paste YouTube short link here
+      },
+    ],
+    // Long videos inside this channel (YouTube links):
+    longVideos: [
+      {
+        id: "ch3-long-1",
+        thumbnail: "/editing/long-commercial.jpg",
+        youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Paste YouTube video link here
+      },
+      {
+        id: "ch3-long-2",
+        thumbnail: "/editing/long-documentary.jpg",
+        youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Paste YouTube video link here
+      },
+    ],
+  },
 ];
+
