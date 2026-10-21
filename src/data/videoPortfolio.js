@@ -62,7 +62,7 @@ export const youtubeAutomationChannels = [
     id: "channel-1",
     name: "StoryHive Studios AI",
     avatar: "/editing/channel-ai-1.jpg",
-    channelUrl: "https://www.youtube.com/@StoryHiveStudiosAI", // Paste your YouTube Channel link here
+    channelUrl: "https://www.youtube.com/@StoryHiveStudios", // Official YouTube Channel link
     // Shorts inside this channel (YouTube links):
     shorts: [
       {
@@ -80,13 +80,27 @@ export const youtubeAutomationChannels = [
     longVideos: [
       {
         id: "ch1-long-1",
-        thumbnail: "/editing/long-documentary.jpg",
-        youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Paste YouTube video link here
+        title: "The Dark Truth Behind the Great Fire of London | 1666",
+        thumbnail: "/editing/storyhive-long-1.jpg",
+        youtubeUrl: "https://youtu.be/1FGSv_CJ9W4?si=iqMWhCPUHDbiplZ9",
       },
       {
         id: "ch1-long-2",
-        thumbnail: "/editing/long-commercial.jpg",
-        youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Paste YouTube video link here
+        title: "The Black Death: The Plague That Changed Europe Forever",
+        thumbnail: "/editing/storyhive-long-2.jpg",
+        youtubeUrl: "https://youtu.be/5T5Pmd02nO4?si=N4zEzUZho0R0Sifo",
+      },
+      {
+        id: "ch1-long-3",
+        title: "The Ship Was Found Empty… Where Did the 10 People Go? | Mary Celeste",
+        thumbnail: "/editing/storyhive-long-3.jpg",
+        youtubeUrl: "https://youtu.be/Oi-B_EL45IM?si=mT__lvDyTBJiNhI9",
+      },
+      {
+        id: "ch1-long-4",
+        title: "117 People Vanished! Roanoke Colony Ka Woh Raaz",
+        thumbnail: "/editing/storyhive-long-4.jpg",
+        youtubeUrl: "https://youtu.be/CS3WBZtbnw8?si=q82SIV9K-ThC6SRL",
       },
     ],
   },

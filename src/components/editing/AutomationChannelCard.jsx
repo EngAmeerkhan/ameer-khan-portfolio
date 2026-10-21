@@ -5,8 +5,9 @@
 // Clicking any video opens its YouTube link directly.
 // ============================================================
 import { motion } from "framer-motion";
-import { FaYoutube, FaPlay } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
 import { HiExternalLink } from "react-icons/hi";
+import YouTubeHoverVideoCard from "./YouTubeHoverVideoCard";
 
 export default function AutomationChannelCard({ channel }) {
   return (
@@ -54,46 +55,25 @@ export default function AutomationChannelCard({ channel }) {
         {/* Shorts Preview Row */}
         {channel.shorts && channel.shorts.length > 0 && (
           <div>
-            <div className="flex items-center gap-2 mb-3">
-              <span className="w-1.5 h-4 rounded-full bg-red-500" />
-              <h4 className="text-xs font-bold uppercase tracking-wider text-text-primary">
-                AI Shorts
-              </h4>
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-4 rounded-full bg-red-500" />
+                <h4 className="text-xs font-bold uppercase tracking-wider text-text-primary">
+                  AI Shorts
+                </h4>
+              </div>
+              <span className="text-[11px] text-text-muted">
+                Hover to play preview
+              </span>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {channel.shorts.map((short) => (
-                <motion.a
+                <YouTubeHoverVideoCard
                   key={short.id}
-                  href={short.youtubeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative aspect-[9/16] rounded-2xl overflow-hidden glass-card group cursor-pointer border border-white/10 hover:border-red-500/50 shadow-md transition-all duration-300 block"
-                  whileHover={{ y: -4, scale: 1.02 }}
-                  aria-label="Watch Short on YouTube"
-                >
-                  <img
-                    src={short.thumbnail}
-                    alt="Short Preview"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-106"
-                  />
-
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/55 transition-colors duration-300 flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-1.5 transform group-hover:scale-110 transition-transform duration-300">
-                      <div className="w-11 h-11 rounded-full flex items-center justify-center bg-red-600 text-white shadow-xl">
-                        <FaPlay className="w-4 h-4 ml-0.5" />
-                      </div>
-                      <span className="text-[10px] font-bold text-white px-2 py-0.5 rounded-full bg-black/70 backdrop-blur-md border border-white/15">
-                        YouTube
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="absolute top-2.5 right-2.5 p-1 rounded-md bg-black/60 text-red-400">
-                    <FaYoutube className="w-3 h-3" />
-                  </div>
-                </motion.a>
+                  video={short}
+                  aspectRatio="9/16"
+                />
               ))}
             </div>
           </div>
@@ -102,46 +82,35 @@ export default function AutomationChannelCard({ channel }) {
         {/* Long Videos Preview Row */}
         {channel.longVideos && channel.longVideos.length > 0 && (
           <div>
-            <div className="flex items-center gap-2 mb-3">
-              <span className="w-1.5 h-4 rounded-full bg-cyan-400" />
-              <h4 className="text-xs font-bold uppercase tracking-wider text-text-primary">
-                AI Long Videos
-              </h4>
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-4 rounded-full bg-cyan-400" />
+                <h4 className="text-xs font-bold uppercase tracking-wider text-text-primary">
+                  AI Long Videos
+                </h4>
+              </div>
+              <span className="text-[11px] text-text-muted">
+                Hover to play preview · Click to watch
+              </span>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div
+              className={`grid gap-4 ${
+                channel.longVideos.length === 1
+                  ? "grid-cols-1 max-w-xl"
+                  : channel.longVideos.length === 2
+                  ? "grid-cols-1 sm:grid-cols-2"
+                  : channel.longVideos.length === 3
+                  ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+                  : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4"
+              }`}
+            >
               {channel.longVideos.map((video) => (
-                <motion.a
+                <YouTubeHoverVideoCard
                   key={video.id}
-                  href={video.youtubeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative aspect-video rounded-2xl overflow-hidden glass-card group cursor-pointer border border-white/10 hover:border-red-500/50 shadow-md transition-all duration-300 block"
-                  whileHover={{ y: -4, scale: 1.02 }}
-                  aria-label="Watch Video on YouTube"
-                >
-                  <img
-                    src={video.thumbnail}
-                    alt="Video Preview"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-106"
-                  />
-
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/55 transition-colors duration-300 flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-1.5 transform group-hover:scale-110 transition-transform duration-300">
-                      <div className="w-11 h-11 rounded-full flex items-center justify-center bg-red-600 text-white shadow-xl">
-                        <FaPlay className="w-4 h-4 ml-0.5" />
-                      </div>
-                      <span className="text-[10px] font-bold text-white px-2 py-0.5 rounded-full bg-black/70 backdrop-blur-md border border-white/15">
-                        YouTube
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="absolute top-2.5 right-2.5 p-1 rounded-md bg-black/60 text-red-400">
-                    <FaYoutube className="w-3 h-3" />
-                  </div>
-                </motion.a>
+                  video={video}
+                  aspectRatio="16/9"
+                />
               ))}
             </div>
           </div>
@@ -150,3 +119,4 @@ export default function AutomationChannelCard({ channel }) {
     </div>
   );
 }
+
