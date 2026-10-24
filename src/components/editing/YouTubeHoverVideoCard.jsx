@@ -148,14 +148,10 @@ export default function YouTubeHoverVideoCard({
       {!isPlaying && (
         <div className="absolute inset-0 bg-black/35 group-hover:bg-black/50 transition-colors duration-300 flex items-center justify-center pointer-events-none">
           <div className="flex flex-col items-center gap-2 transform group-hover:scale-110 transition-transform duration-300">
-            <div
-              className={`rounded-full flex items-center justify-center bg-red-600 text-white shadow-2xl transition-transform duration-300 group-hover:scale-105 ${
-                isVertical ? "w-12 h-12" : "w-14 h-14 sm:w-16 sm:h-16"
-              }`}
-            >
-              <FaPlay className={`${isVertical ? "w-4 h-4" : "w-5 h-5"} ml-0.5`} />
+            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center bg-red-600 text-white shadow-2xl transition-transform duration-300 group-hover:scale-105">
+              <FaPlay className="w-5 h-5 ml-0.5" />
             </div>
-            <span className="flex items-center gap-1.5 text-[10px] sm:text-xs font-bold text-white px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 shadow-lg">
+            <span className="flex items-center gap-1.5 text-xs font-bold text-white px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 shadow-lg">
               <HiSparkles className="w-3.5 h-3.5 text-red-400" />
               Hover to Preview
             </span>
@@ -165,7 +161,7 @@ export default function YouTubeHoverVideoCard({
 
       {/* 4. Active Live Preview Badge */}
       {isPlaying && (
-        <div className="absolute top-2.5 left-2.5 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wide uppercase bg-red-600 text-white backdrop-blur-md shadow-lg border border-red-400/40 pointer-events-none animate-pulse">
+        <div className="absolute top-3 left-3 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-bold tracking-wide uppercase bg-red-600 text-white backdrop-blur-md shadow-lg border border-red-400/40 pointer-events-none animate-pulse">
           <span className="w-1.5 h-1.5 rounded-full bg-white" />
           <span>Live Preview</span>
           <HiVolumeOff className="w-3.5 h-3.5 ml-0.5 opacity-90" />
@@ -174,43 +170,31 @@ export default function YouTubeHoverVideoCard({
 
       {/* 4B. High-Performance View Count Badge (when not previewing) */}
       {!isPlaying && video.views && (
-        <div className="absolute top-2.5 left-2.5 z-20 px-2.5 py-1 rounded-full text-[10px] sm:text-[11px] font-bold bg-black/85 backdrop-blur-md text-amber-300 border border-amber-400/35 flex items-center gap-1 shadow-lg pointer-events-none">
+        <div className="absolute top-3 left-3 z-20 px-3 py-1 rounded-full text-xs font-bold bg-black/85 backdrop-blur-md text-amber-300 border border-amber-400/40 flex items-center gap-1.5 shadow-lg pointer-events-none">
           <span>🔥</span>
           <span>{video.views}</span>
         </div>
       )}
 
       {/* 5. Top Right YouTube Icon Badge */}
-      <div
-        className={`absolute top-2.5 right-2.5 z-20 rounded-xl bg-black/75 backdrop-blur-md text-red-500 border border-white/10 pointer-events-none transition-transform group-hover:scale-110 shadow-lg ${
-          isVertical ? "p-1.5" : "p-2"
-        }`}
-      >
-        <FaYoutube className={isVertical ? "w-3.5 h-3.5" : "w-4 h-4"} />
+      <div className="absolute top-3 right-3 z-20 p-2 rounded-xl bg-black/75 backdrop-blur-md text-red-500 border border-white/10 pointer-events-none transition-transform group-hover:scale-110 shadow-lg">
+        <FaYoutube className="w-4 h-4" />
       </div>
 
       {/* 6. Bottom Title Bar with smooth gradient */}
-      <div
-        className={`absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-black/95 via-black/80 to-transparent pointer-events-none transition-all duration-300 ${
-          isVertical ? "p-3 pt-10" : "p-4 sm:p-5 pt-12"
-        }`}
-      >
+      <div className="absolute inset-x-0 bottom-0 z-20 p-4 sm:p-5 pt-12 bg-gradient-to-t from-black/95 via-black/80 to-transparent pointer-events-none transition-all duration-300">
         {video.title && (
-          <p
-            className={`font-bold text-white line-clamp-2 leading-snug drop-shadow-md ${
-              isVertical ? "text-xs" : "text-sm sm:text-base"
-            }`}
-          >
+          <p className="text-sm sm:text-base font-bold text-white line-clamp-2 leading-snug drop-shadow-md">
             {video.title}
           </p>
         )}
-        <div className="flex items-center justify-between text-[10px] sm:text-xs text-text-muted mt-2 pt-1 border-t border-white/10">
+        <div className="flex items-center justify-between text-xs text-text-muted mt-2 pt-1.5 border-t border-white/10">
           <span className="text-red-400 group-hover:text-red-300 font-semibold flex items-center gap-1 transition-colors">
             {isVertical ? "Watch Short" : "Watch on YouTube"}{" "}
             <HiExternalLink className="w-3.5 h-3.5 inline" />
           </span>
           {isPlaying && (
-            <span className="text-white/80 text-[9px] sm:text-[10px] bg-white/10 backdrop-blur-sm px-1.5 py-0.5 rounded border border-white/10">
+            <span className="text-white/80 text-[10px] bg-white/10 backdrop-blur-sm px-2 py-0.5 rounded border border-white/10">
               Muted
             </span>
           )}

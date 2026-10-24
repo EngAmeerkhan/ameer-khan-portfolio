@@ -107,7 +107,7 @@ export default function AutomationChannelCard({ channel }) {
             </span>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {channel.shorts.map((short) => (
               <YouTubeHoverVideoCard
                 key={short.id}
