@@ -1,20 +1,18 @@
 // ============================================================
 // VideoSection.jsx
 // Minimalist, streamlined Video Editing Portfolio section for main page.
-// Shows clean shorts previews, long video previews (Google Drive links),
+// Shows Instagram Reels previews with instant hover playback
 // and AI YouTube Automation channels (YouTube links).
 // ============================================================
 import SectionWrapper from "../ui/SectionWrapper";
 import ShortCard from "./ShortCard";
-import LongVideoCard from "./LongVideoCard";
 import AutomationChannelCard from "./AutomationChannelCard";
 import {
   shortsVideos,
-  longFormVideos,
   youtubeAutomationChannels,
 } from "../../data/videoPortfolio";
 import { HiArrowRight, HiFilm, HiSparkles } from "react-icons/hi";
-import { FaGoogleDrive, FaYoutube, FaInstagram } from "react-icons/fa";
+import { FaYoutube, FaInstagram } from "react-icons/fa";
 
 export default function VideoSection({ onOpenFullStudio }) {
   return (
@@ -30,15 +28,12 @@ export default function VideoSection({ onOpenFullStudio }) {
             Video <span className="gradient-text">Showcase</span>
           </h2>
           <p className="text-text-muted mt-2 text-sm sm:text-base max-w-lg mx-auto">
-            Interactive video previews for Instagram Reels and YouTube Automation, plus Google Drive long-form edits.
+            Interactive video previews for Instagram Reels and YouTube Automation channels.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-3 mt-4 text-xs text-text-muted">
             <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-pink-500/20 text-pink-300">
               <FaInstagram className="w-3.5 h-3.5 text-pink-500" /> Instagram Reels (Hover to Preview)
-            </span>
-            <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.06]">
-              <FaGoogleDrive className="w-3.5 h-3.5 text-emerald-400" /> Google Drive (Long Form)
             </span>
             <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.06]">
               <FaYoutube className="w-3.5 h-3.5 text-red-500" /> YouTube AI Channels
@@ -67,25 +62,6 @@ export default function VideoSection({ onOpenFullStudio }) {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
             {shortsVideos.map((short) => (
               <ShortCard key={short.id} short={short} />
-            ))}
-          </div>
-        </div>
-
-        {/* 2. Long-Form Videos Section (Google Drive Links) */}
-        <div className="mb-20">
-          <div className="flex items-center gap-2 mb-6">
-            <span className="w-2 h-5 rounded-full bg-accent-cyan" />
-            <h3 className="font-display text-xl sm:text-2xl font-bold text-white">
-              Long-Form Videos
-            </h3>
-            <span className="text-xs text-text-muted ml-2">
-              (Click to open on Google Drive)
-            </span>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {longFormVideos.map((video) => (
-              <LongVideoCard key={video.id} video={video} />
             ))}
           </div>
         </div>
