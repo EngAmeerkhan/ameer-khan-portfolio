@@ -79,7 +79,7 @@ export const longFormVideos = [
 ];
 
 // ------------------------------------------------------------
-// 3. YouTube Automation for AI Videos (Channels Showcase)
+// 2. YouTube Automation for AI Videos (Channels Showcase)
 // ------------------------------------------------------------
 export const youtubeAutomationChannels = [
   {
@@ -87,43 +87,33 @@ export const youtubeAutomationChannels = [
     name: "StoryHive Studios AI",
     avatar: "/editing/channel-ai-1.jpg",
     channelUrl: "https://www.youtube.com/@StoryHiveStudios", // Official YouTube Channel link
-    // Shorts inside this channel (YouTube links):
-    shorts: [
-      {
-        id: "ch1-short-1",
-        thumbnail: "/editing/shorts-techbreakdown.jpg",
-        youtubeUrl: "https://www.youtube.com/shorts/dQw4w9WgXcQ", // Paste YouTube short link here
-      },
-      {
-        id: "ch1-short-2",
-        thumbnail: "/editing/shorts-talkinghead.jpg",
-        youtubeUrl: "https://www.youtube.com/shorts/dQw4w9WgXcQ", // Paste YouTube short link here
-      },
-    ],
-    // Long videos inside this channel (YouTube links):
     longVideos: [
       {
         id: "ch1-long-1",
         title: "The Dark Truth Behind the Great Fire of London | 1666",
         thumbnail: "/editing/storyhive-long-1.jpg",
+        previewVideo: "/editing/youtube/storyhive-1.mp4",
         youtubeUrl: "https://youtu.be/1FGSv_CJ9W4?si=iqMWhCPUHDbiplZ9",
       },
       {
         id: "ch1-long-2",
         title: "The Black Death: The Plague That Changed Europe Forever",
         thumbnail: "/editing/storyhive-long-2.jpg",
+        previewVideo: "/editing/youtube/storyhive-2.mp4",
         youtubeUrl: "https://youtu.be/5T5Pmd02nO4?si=N4zEzUZho0R0Sifo",
       },
       {
         id: "ch1-long-3",
         title: "The Ship Was Found Empty… Where Did the 10 People Go? | Mary Celeste",
         thumbnail: "/editing/storyhive-long-3.jpg",
+        previewVideo: "/editing/youtube/storyhive-3.mp4",
         youtubeUrl: "https://youtu.be/Oi-B_EL45IM?si=mT__lvDyTBJiNhI9",
       },
       {
         id: "ch1-long-4",
         title: "117 People Vanished! Roanoke Colony Ka Woh Raaz",
         thumbnail: "/editing/storyhive-long-4.jpg",
+        previewVideo: "/editing/youtube/storyhive-4.mp4",
         youtubeUrl: "https://youtu.be/CS3WBZtbnw8?si=q82SIV9K-ThC6SRL",
       },
     ],
@@ -132,26 +122,13 @@ export const youtubeAutomationChannels = [
     id: "channel-2",
     name: "Restoration Ventures",
     avatar: "/editing/channel-ai-2.jpg",
-    channelUrl: "https://www.youtube.com/@RestorationVentures", // Paste your YouTube Channel link here
-    // Shorts inside this channel (YouTube links):
-    shorts: [
-      {
-        id: "ch2-short-1",
-        thumbnail: "/editing/shorts-gaming.jpg",
-        youtubeUrl: "https://www.youtube.com/shorts/dQw4w9WgXcQ", // Paste YouTube short link here
-      },
-      {
-        id: "ch2-short-2",
-        thumbnail: "/editing/shorts-cinematic.jpg",
-        youtubeUrl: "https://www.youtube.com/shorts/dQw4w9WgXcQ", // Paste YouTube short link here
-      },
-    ],
-    // Long videos inside this channel (YouTube links):
+    channelUrl: "https://www.youtube.com/@RestorationVentures",
     longVideos: [
       {
         id: "ch2-long-1",
+        title: "AI Restoration Case Study & Visual Breakdown",
         thumbnail: "/editing/long-podcast.jpg",
-        youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Paste YouTube video link here
+        youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
       },
     ],
   },
@@ -159,31 +136,19 @@ export const youtubeAutomationChannels = [
     id: "channel-3",
     name: "Pawssh Sspa",
     avatar: "/editing/channel-ai-3.jpg",
-    channelUrl: "https://www.youtube.com/@PawsshSspa", // Paste your YouTube Channel link here
-    // Shorts inside this channel (YouTube links):
-    shorts: [
-      {
-        id: "ch3-short-1",
-        thumbnail: "/editing/shorts-talkinghead.jpg",
-        youtubeUrl: "https://www.youtube.com/shorts/dQw4w9WgXcQ", // Paste YouTube short link here
-      },
-      {
-        id: "ch3-short-2",
-        thumbnail: "/editing/shorts-techbreakdown.jpg",
-        youtubeUrl: "https://www.youtube.com/shorts/dQw4w9WgXcQ", // Paste YouTube short link here
-      },
-    ],
-    // Long videos inside this channel (YouTube links):
+    channelUrl: "https://www.youtube.com/@PawsshSspa",
     longVideos: [
       {
         id: "ch3-long-1",
+        title: "Pet Care AI Branding & Commercial Edit",
         thumbnail: "/editing/long-commercial.jpg",
-        youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Paste YouTube video link here
+        youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
       },
       {
         id: "ch3-long-2",
+        title: "High-Retention Pet Automation Stories",
         thumbnail: "/editing/long-documentary.jpg",
-        youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Paste YouTube video link here
+        youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
       },
     ],
   },

@@ -113,7 +113,7 @@ export default function VideoPortfolioPage({ onBackToDev }) {
               YouTube Automation (AI Video Channels)
             </h2>
             <span className="text-xs text-text-muted ml-2">
-              (Click to preview on YouTube)
+              (Hover to preview instantly · Click to watch on YouTube)
             </span>
           </div>
 

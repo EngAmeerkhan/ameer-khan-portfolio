@@ -74,7 +74,7 @@ export default function VideoSection({ onOpenFullStudio }) {
               YouTube Automation (AI Video Channels)
             </h3>
             <span className="text-xs text-text-muted ml-2">
-              (Click videos to preview on YouTube)
+              (Hover to preview instantly · Click to watch on YouTube)
             </span>
           </div>
 
