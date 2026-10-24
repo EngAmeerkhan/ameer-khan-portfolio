@@ -14,7 +14,7 @@ import {
   youtubeAutomationChannels,
 } from "../../data/videoPortfolio";
 import { HiArrowRight, HiFilm, HiSparkles } from "react-icons/hi";
-import { FaGoogleDrive, FaYoutube } from "react-icons/fa";
+import { FaGoogleDrive, FaYoutube, FaInstagram } from "react-icons/fa";
 
 export default function VideoSection({ onOpenFullStudio }) {
   return (
@@ -30,12 +30,15 @@ export default function VideoSection({ onOpenFullStudio }) {
             Video <span className="gradient-text">Showcase</span>
           </h2>
           <p className="text-text-muted mt-2 text-sm sm:text-base max-w-lg mx-auto">
-            Clean video previews for Shorts and Long-form edits, plus AI YouTube automation channels.
+            Interactive video previews for Instagram Reels and YouTube Automation, plus Google Drive long-form edits.
           </p>
 
-          <div className="flex items-center justify-center gap-3 mt-4 text-xs text-text-muted">
+          <div className="flex flex-wrap items-center justify-center gap-3 mt-4 text-xs text-text-muted">
+            <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-pink-500/20 text-pink-300">
+              <FaInstagram className="w-3.5 h-3.5 text-pink-500" /> Instagram Reels (Hover to Preview)
+            </span>
             <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.06]">
-              <FaGoogleDrive className="w-3.5 h-3.5 text-emerald-400" /> Google Drive Previews
+              <FaGoogleDrive className="w-3.5 h-3.5 text-emerald-400" /> Google Drive (Long Form)
             </span>
             <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.06]">
               <FaYoutube className="w-3.5 h-3.5 text-red-500" /> YouTube AI Channels
@@ -43,15 +46,21 @@ export default function VideoSection({ onOpenFullStudio }) {
           </div>
         </div>
 
-        {/* 1. Shorts & Reels Section (Google Drive Links) */}
+        {/* 1. Shorts & Reels Section (Instagram Reels with Instant Hover Preview) */}
         <div className="mb-20">
           <div className="flex items-center gap-2 mb-6">
-            <span className="w-2 h-5 rounded-full bg-accent-emerald" />
+            <span
+              className="w-2 h-5 rounded-full"
+              style={{
+                background:
+                  "linear-gradient(180deg, #f09433 0%, #dc2743 50%, #bc1888 100%)",
+              }}
+            />
             <h3 className="font-display text-xl sm:text-2xl font-bold text-white">
               Shorts & Reels
             </h3>
             <span className="text-xs text-text-muted ml-2">
-              (Click to open on Google Drive)
+              (Hover to preview instantly · Click to open on Instagram)
             </span>
           </div>
 

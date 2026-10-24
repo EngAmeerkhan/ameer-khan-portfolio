@@ -8,28 +8,52 @@
 // ============================================================
 
 // ------------------------------------------------------------
-// 1. Shorts & Vertical Reels (9:16) — Google Drive Previews
+// 1. Shorts & Vertical Reels (9:16) — Instagram Reels with Instant Hover Preview
 // ------------------------------------------------------------
 export const shortsVideos = [
   {
-    id: "short-1",
-    thumbnail: "/editing/shorts-talkinghead.jpg",
-    driveUrl: "https://drive.google.com/file/d/sample-reel-1/view",
+    id: "reel-1",
+    title: "Houston Real Estate & Growth Trends",
+    creator: "@mustafa.tunc.houston.realtor",
+    tag: "Real Estate Edit",
+    thumbnail: "/editing/reels/reel-1.jpg",
+    previewVideo: "/editing/reels/reel-1.mp4",
+    instagramUrl:
+      "https://www.instagram.com/reel/Dey7we5kel4/?utm_source=ig_web_copy_link&dlrf=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==",
+    reelCode: "Dey7we5kel4",
   },
   {
-    id: "short-2",
-    thumbnail: "/editing/shorts-techbreakdown.jpg",
-    driveUrl: "https://drive.google.com/file/d/sample-reel-2/view",
+    id: "reel-2",
+    title: "Open House Chicago: 3 Vintage Home Details",
+    creator: "Danielle Eddy (@deddyo2007)",
+    tag: "Architecture & Homes",
+    thumbnail: "/editing/reels/reel-2.jpg",
+    previewVideo: "/editing/reels/reel-2.mp4",
+    instagramUrl:
+      "https://www.instagram.com/reel/DefTUaYFHId/?utm_source=ig_web_copy_link&xtok=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==",
+    reelCode: "DefTUaYFHId",
   },
   {
-    id: "short-3",
-    thumbnail: "/editing/shorts-cinematic.jpg",
-    driveUrl: "https://drive.google.com/file/d/sample-reel-3/view",
+    id: "reel-3",
+    title: "Iconic Chicago Home Styles: Greystones & Bungalows",
+    creator: "Danielle Eddy (@deddyo2007)",
+    tag: "Architecture & Real Estate",
+    thumbnail: "/editing/reels/reel-3.jpg",
+    previewVideo: "/editing/reels/reel-3.mp4",
+    instagramUrl:
+      "https://www.instagram.com/reel/DdwvC-kk8lv/?utm_source=ig_web_copy_link&dlrf=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==",
+    reelCode: "DdwvC-kk8lv",
   },
   {
-    id: "short-4",
-    thumbnail: "/editing/shorts-gaming.jpg",
-    driveUrl: "https://drive.google.com/file/d/sample-reel-4/view",
+    id: "reel-4",
+    title: "Crucial Advice for First-Time Home Buyers",
+    creator: "Danielle Eddy (@deddyo2007)",
+    tag: "Buyer Guide & Strategy",
+    thumbnail: "/editing/reels/reel-4.jpg",
+    previewVideo: "/editing/reels/reel-4.mp4",
+    instagramUrl:
+      "https://www.instagram.com/reel/DeM7E7iD9JD/?utm_source=ig_web_copy_link&srtk=MzRlODBiNWFlZA==",
+    reelCode: "DeM7E7iD9JD",
   },
 ];
 
