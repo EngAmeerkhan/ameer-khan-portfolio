@@ -146,15 +146,9 @@ export default function YouTubeHoverVideoCard({
 
       {/* 3. Static Hover Play Overlay (when not actively playing) */}
       {!isPlaying && (
-        <div className="absolute inset-0 bg-black/35 group-hover:bg-black/50 transition-colors duration-300 flex items-center justify-center pointer-events-none">
-          <div className="flex flex-col items-center gap-2 transform group-hover:scale-110 transition-transform duration-300">
-            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center bg-red-600 text-white shadow-2xl transition-transform duration-300 group-hover:scale-105">
-              <FaPlay className="w-5 h-5 ml-0.5" />
-            </div>
-            <span className="flex items-center gap-1.5 text-xs font-bold text-white px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 shadow-lg">
-              <HiSparkles className="w-3.5 h-3.5 text-red-400" />
-              Hover to Preview
-            </span>
+        <div className="absolute inset-0 bg-black/25 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center pointer-events-none">
+          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center bg-red-600 text-white shadow-2xl transition-transform duration-300 group-hover:scale-115">
+            <FaPlay className="w-5 h-5 ml-0.5" />
           </div>
         </div>
       )}

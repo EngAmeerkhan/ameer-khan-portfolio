@@ -107,24 +107,17 @@ export default function ShortCard({ short }) {
 
         {/* 3. Static Play Overlay (shown before hover) */}
         {!isPlaying && (
-          <div className="absolute inset-0 bg-black/30 group-hover:bg-black/45 transition-colors duration-300 flex items-center justify-center pointer-events-none">
-            <div className="flex flex-col items-center gap-2 transform group-hover:scale-110 transition-transform duration-300">
-              {/* Instagram Gradient Play Button */}
-              <div
-                className="w-13 h-13 sm:w-14 sm:h-14 rounded-full flex items-center justify-center text-white shadow-2xl transition-transform duration-300 group-hover:scale-105"
-                style={{
-                  background:
-                    "linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)",
-                  boxShadow: "0 0 25px rgba(220, 39, 67, 0.5)",
-                }}
-              >
-                <FaPlay className="w-5 h-5 ml-0.5 text-white drop-shadow-md" />
-              </div>
-
-              <span className="flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold text-white bg-black/75 backdrop-blur-md border border-white/20 shadow-lg">
-                <HiSparkles className="w-3.5 h-3.5 text-pink-400" />
-                Hover to Preview
-              </span>
+          <div className="absolute inset-0 bg-black/25 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center pointer-events-none">
+            {/* Instagram Gradient Play Button */}
+            <div
+              className="w-13 h-13 sm:w-14 sm:h-14 rounded-full flex items-center justify-center text-white shadow-2xl transition-transform duration-300 group-hover:scale-115"
+              style={{
+                background:
+                  "linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)",
+                boxShadow: "0 0 25px rgba(220, 39, 67, 0.5)",
+              }}
+            >
+              <FaPlay className="w-5 h-5 ml-0.5 text-white drop-shadow-md" />
             </div>
           </div>
         )}
